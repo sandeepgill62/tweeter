@@ -1,14 +1,12 @@
 header {
   color: #FFFFFF;
   background-image: url("../images/asfalt-light.png");
-  /* background-color: #6c8213; */
   background-color: #a39c18;
   height: 500px;
   width: 100%;
   padding: 5em 0 0 0;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   font-family: 'Source Sans 3', sans-serif;
 }

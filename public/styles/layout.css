@@ -27,3 +27,10 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+main {
+  width: 90%;
+  /* adding margin on left and right */
+  margin: auto;
+  background-color: #f4f1ec;
+}

@@ -1,0 +1,51 @@
+/* css for tweets article */
+
+.create-tweets {
+  box-sizing: border-box;
+  border: 3px solid black;
+  margin: 2em 0;
+  padding: 1em 0.5em;
+}
+
+.create-tweets:hover {
+  box-shadow: 5px 10px #888888;
+}
+
+box-shadow article header {
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  Justify-content: space-between;
+}
+
+article header .tweeter-tag {
+  color: #4056A1;
+}
+
+article .tweet-message {
+  width: 100%;
+  margin: 2em 0em 1em 0em;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 3px solid black;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+article footer {
+  font-size: 17px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  Justify-content: space-between;
+}
+
+article footer .icons i {
+  margin: 0em 0.2em;
+  color: #4056A1;
+}
+
+article footer .icons i:hover {
+  color: #a39c18;
+}

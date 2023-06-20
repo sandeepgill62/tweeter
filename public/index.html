@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweet-article.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -48,7 +49,7 @@
     </div>
   </nav>
 
-  <header>
+  <header class="site-header">
     <!-- header avatar and user name -->
     <div class="avatar">
       <img src="/images/profile-hex.png">
@@ -70,10 +71,39 @@
         <textarea name="text" id="tweet-text"></textarea>
         <div class="form-bottom">
           <button type="submit">Tweet</button>
-          <!-- counter will change when enter -->
+          <!-- counter will change when input with keyboard -->
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
+    </section>
+
+    <!-- section for tweets articles -->
+    <section class="create-tweets">
+      <article class="tweets">
+        <!-- header of tweet -->
+        <header>
+          <div>
+            <i class="fa-sharp fa-solid fa-face-smile"></i>
+            <label for="tweeter-name">Rhoda Jacobs</label>
+          </div>
+          <label class="tweeter-tag" for="tweeter-tag">@MrsJacobs</label>
+        </header>
+
+        <!-- message body of tweet -->
+        <div class="tweet-message">
+          <label for="tweeter-days">Hello world!</label>
+        </div>
+
+        <!-- footer of tweet -->
+        <footer>
+          <label for="tweet-days">10 days ago</label>
+          <div class="icons">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-sharp fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
     </section>
   </main>
 </body>

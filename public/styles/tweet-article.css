@@ -1,22 +1,27 @@
 /* css for tweets article */
 
-.create-tweets {
+.tweets-outline {
   box-sizing: border-box;
   border: 3px solid black;
   margin: 2em 0;
   padding: 1em 0.5em;
 }
 
-.create-tweets:hover {
+.tweets-outline:hover {
   box-shadow: 5px 10px #888888;
 }
 
-box-shadow article header {
+article header {
   font-size: 20px;
   display: flex;
   flex-direction: row;
   text-align: center;
   Justify-content: space-between;
+}
+
+article header .avtarAndName {
+  display: flex;
+  flex-direction: row;
 }
 
 article header .tweeter-tag {

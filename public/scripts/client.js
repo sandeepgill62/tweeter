@@ -26,15 +26,17 @@ const data = [
 ]
 
 const renderTweets = function(tweets) {
-  for (const tweet of tweets) {
-    const $t = createTweetElement(tweet);
+  for (const t of tweets) {
+    const $tweet = createTweetElement(t);
     $(document).ready(function() {
-      $('.tweets-container').append($t);
+      $('.tweets-container').append($tweet);
     });
   }
 }
 
 const createTweetElement = function(tweet) {
+
+  console.log(tweet);
 
   let $tweet = $(`<div class="tweets-outline">
   <article class="tweets">
@@ -54,7 +56,8 @@ const createTweetElement = function(tweet) {
 
     <!-- footer of tweet -->
     <footer>
-      <label for="tweet-days">${tweet['created_at']}</label>
+    
+      <label for="tweet-days">${timeago.format(tweet['created_at'])}</label>
       <div class="icons">
         <i class="fa-solid fa-flag"></i>
         <i class="fa-sharp fa-solid fa-retweet"></i>
@@ -66,4 +69,31 @@ const createTweetElement = function(tweet) {
   return $tweet;
 }
 
-renderTweets(data);
+// renderTweets(data);
+
+const loadTweets = function() {
+  console.log("load..");
+  $(document).ready(function() {
+
+    console.log($(this).serialize());
+
+    console.log('Button clicked, performing ajax call...');
+    $.ajax('http://localhost:8080/tweets', { method: 'GET' })
+      .then(function(data) {
+        console.log('Success: ', data);
+        console.log(data[0]['user']);
+        renderTweets(data);
+      });
+
+    const $button = $('.submit');
+    $button.on('click', function(event) {
+      event.preventDefault();
+      console.log($(this).serialize());
+
+
+    });
+  });
+
+}
+
+loadTweets();

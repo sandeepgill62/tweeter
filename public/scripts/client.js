@@ -26,15 +26,19 @@ const data = [
 ]
 
 $(document).ready(function() {
+
+  // render each tweet
   const renderTweets = function(tweets) {
     for (const t of tweets) {
+      // call function to create tweet element
       const $tweet = createTweetElement(t);
+      // prepend the tweet
       $('.tweets-container').prepend($tweet);
     }
   }
 
+  // create tweet element
   const createTweetElement = function(tweet) {
-
     let $tweet = $(`<div class="tweets-outline">
   <article class="tweets">
     <!-- header of tweet -->
@@ -66,9 +70,8 @@ $(document).ready(function() {
     return $tweet;
   }
 
+  // function to load all tweets
   const loadTweets = function() {
-
-    console.log("hello");
 
     $.ajax('http://localhost:8080/tweets', { method: 'GET' })
       .then(function(data) {
@@ -82,8 +85,8 @@ $(document).ready(function() {
     event.preventDefault();
 
     const textValue = $('#tweet-text').val();
-    console.log(textValue.length);
 
+    //validation the tweet if empty or too long
     if (textValue.length === 0 || textValue === null) {
       alert("Tweet content should not be empty");
     } else if (textValue.length > 140) {
@@ -95,12 +98,12 @@ $(document).ready(function() {
         //serialize the text
         data: $(this).serialize(),
       }).done(function(data) {
-        console.log(data);
+        //call the function to load the tweets from server
+        loadTweets();
       });
     }
-
   });
 
+  //call the function to load the tweets from server
   loadTweets();
-
 });

@@ -66,10 +66,22 @@ $(document).ready(function() {
     return $tweet;
   }
 
+  const loadTweets = function() {
+
+    console.log("hello");
+
+    $.ajax('http://localhost:8080/tweets', { method: 'GET' })
+      .then(function(data) {
+        console.log('Success: ', data);
+        renderTweets(data);
+      });
+
+
+  }
+
   $("form").on("submit", function(event) {
     // Stop form from submitting normally
     event.preventDefault();
-    //const text = $("#tweet-text").val();
 
     $.ajax({
       method: "POST",
@@ -81,5 +93,7 @@ $(document).ready(function() {
     });
 
   });
+
+  loadTweets();
 
 });

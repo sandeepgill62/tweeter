@@ -29,7 +29,7 @@ $(document).ready(function() {
   const renderTweets = function(tweets) {
     for (const t of tweets) {
       const $tweet = createTweetElement(t);
-      $('.tweets-container').append($tweet);
+      $('.tweets-container').prepend($tweet);
     }
   }
 
@@ -75,22 +75,29 @@ $(document).ready(function() {
         console.log('Success: ', data);
         renderTweets(data);
       });
-
-
   }
 
   $("form").on("submit", function(event) {
     // Stop form from submitting normally
     event.preventDefault();
 
-    $.ajax({
-      method: "POST",
-      url: `/tweets`,
-      //serialize the text
-      data: $(this).serialize(),
-    }).done(function(data) {
-      console.log(data);
-    });
+    const textValue = $('#tweet-text').val();
+    console.log(textValue.length);
+
+    if (textValue.length === 0 || textValue === null) {
+      alert("Tweet content should not be empty");
+    } else if (textValue.length > 140) {
+      alert("Tweet content is too long");
+    } else {
+      $.ajax({
+        method: "POST",
+        url: `/tweets`,
+        //serialize the text
+        data: $(this).serialize(),
+      }).done(function(data) {
+        console.log(data);
+      });
+    }
 
   });
 

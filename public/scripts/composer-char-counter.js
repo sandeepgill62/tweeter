@@ -13,10 +13,10 @@ $(document).ready(function() {
     //set the color of output variable accoding to value
     if ($('.counter').val() < 0) {
       // set up red
-      $('counter').css('color', '#FF0000');
+      $('.counter').css('color', '#FF0000');
     } else {
       //set up black
-      $('counter').css('color', '#000000');
+      $('.counter').css('color', '#000000');
     }
   });
 });

@@ -80,22 +80,31 @@ $(document).ready(function() {
       });
   }
 
+  $(".error-div").hide();
+
   $("form").on("submit", function(event) {
     // Stop form from submitting normally
     event.preventDefault();
 
+    // get the tweet text
     const textValue = $('#tweet-text').val();
 
-    //validation the tweet if empty or too long
+    // validation the tweet if empty or too long
     if (textValue.length === 0 || textValue === null) {
-      alert("Tweet content should not be empty");
+      // slide down the error message
+      $(".error-div").slideDown();
+      $(".error-message").text("Tweet content should not be empty");
     } else if (textValue.length > 140) {
-      alert("Tweet content is too long");
+      // slide down the error message
+      $(".error-div").slideDown();
+      $(".error-message").text("Tweet content is too long. Limit is 140 characters.");
     } else {
+      // slide up the error message
+      $(".error-div").slideUp();
       $.ajax({
         method: "POST",
         url: `/tweets`,
-        //serialize the text
+        // serialize the text
         data: $(this).serialize(),
       }).done(function(data) {
         //call the function to load the tweets from server
@@ -106,4 +115,5 @@ $(document).ready(function() {
 
   //call the function to load the tweets from server
   loadTweets();
+
 });

@@ -70,22 +70,28 @@ $(document).ready(function() {
     return $tweet;
   }
 
+  var flag = true;
   // function to load all tweets
   const loadTweets = function() {
 
     $.ajax('http://localhost:8080/tweets', { method: 'GET' })
       .then(function(data) {
-        console.log('Success: ', data);
-        renderTweets(data);
+        if (flag) {
+          renderTweets(data);
+        } else {
+          const $tweet = createTweetElement(data[data.length - 1]);
+          // prepend the tweet
+          $('.tweets-container').prepend($tweet);
+        }
+        flag = false;
       });
-  }
+  };
 
   $(".error-div").hide();
 
   $("form").on("submit", function(event) {
     // Stop form from submitting normally
     event.preventDefault();
-
     // get the tweet text
     const textValue = $('#tweet-text').val();
 
@@ -109,6 +115,7 @@ $(document).ready(function() {
       }).done(function(data) {
         //call the function to load the tweets from server
         loadTweets();
+        $('#tweet-text').val("");
       });
     }
   });

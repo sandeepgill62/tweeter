@@ -41,7 +41,7 @@ main {
   /* CSS rules that target Laptop/Desktop screen sizes and beyond */
 
   .content {
-    padding: 9em 1em 9em 0em;
+    padding: 8em 1em 9em 0em;
     display: flex;
     flex-direction: row;
   }

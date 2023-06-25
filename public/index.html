@@ -5,6 +5,8 @@
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
 
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
@@ -53,44 +55,46 @@
     </div>
   </nav>
 
-  <header class="site-header">
-    <!-- header avatar and user name -->
-    <div class="avatar">
-      <img src="/images/profile-hex.png">
-    </div>
-    <div class="name">
-      <h2><span>Sandeep </span>Gill</h2>
-    </div>
-  </header>
-
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-
-      <div class="error-div">
-        <i class="fa-solid fa-triangle-exclamation"></i>
-        <label class="error-message"> error message </label>
-        <i class="fa-solid fa-triangle-exclamation"></i>
+  <div class="content">
+    <header class="site-header">
+      <!-- header avatar and user name -->
+      <div class="avatar">
+        <img src="/images/profile-hex.png">
       </div>
+      <div class="name">
+        <h2><span>Sandeep </span>Gill</h2>
+      </div>
+    </header>
 
-      <!-- main header -->
-      <h2>Compose Tweet</h2>
-      <!-- form with POST /tweets endpoint -->
-      <form class="form" action="/tweets" method="POST">
-        <!-- label, text area and button -->
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea class="tweet-text" name="text" id="tweet-text"></textarea>
-        <div class="form-bottom">
-          <button class="submit" type="submit">Tweet</button>
-          <!-- counter will change when input with keyboard -->
-          <output name="counter" class="counter" for="tweet-text">140</output>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+
+        <div class="error-div">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <label class="error-message"> error message </label>
+          <i class="fa-solid fa-triangle-exclamation"></i>
         </div>
-      </form>
-    </section>
 
-    <!-- section for tweets articles -->
-    <section class="tweets-container">
-    </section>
+        <!-- main header -->
+        <h2>Compose Tweet</h2>
+        <!-- form with POST /tweets endpoint -->
+        <form class="form" action="/tweets" method="POST">
+          <!-- label, text area and button -->
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea class="tweet-text" name="text" id="tweet-text"></textarea>
+          <div class="form-bottom">
+            <button class="submit" type="submit">Tweet</button>
+            <!-- counter will change when input with keyboard -->
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+
+      <!-- section for tweets articles -->
+      <section class="tweets-container">
+      </section>
+  </div>
   </main>
 </body>
 

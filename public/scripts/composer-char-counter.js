@@ -3,8 +3,8 @@ $(document).ready(function() {
   // get length of maximum character
   var maxLength = $('.counter').val();
 
-  // trigger the event handler when any key press
-  $("textarea").keypress(function() {
+  // trigger the event handler when any key up
+  $("textarea").keyup(function() {
     //get remaining value of character of text area
     var textlen = maxLength - $(this).val().length;
     //set the value

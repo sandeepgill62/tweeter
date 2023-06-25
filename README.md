@@ -6,9 +6,9 @@ A simple single-page AJAX Twitter clone that use jQuery, HTML 5 and plain CSS3.
 
 ## Screen Shots
 
-!["Screen shot of tweeter page"]()
-!["Screen shot of all tweets"]()
-!["Screen shot of warning message"]()
+!["Screen shot of tweeter page"](./public/docs/tweeter_page.png)
+!["Screen shot of all tweets"](./public/docs/all_tweets.png)
+!["Screen shot of warning message"](./public/docs/warning_message.png)
 
 
 ## Getting Started
